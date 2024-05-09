@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romeo Paul - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header, footer, nav, section, article {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            color: #2980b9;
+        }
+        section, article {
+            line-height: 1.6;
+        }
+        section h3, article h2 {
+            color: #e67e22;
+        }
+        footer {
+            text-align: center;
+            color: #c0392b;
+        }
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Make it circular */
+            margin: 0 auto 20px;
+            display: block;
+            overflow: hidden;
+            float: center; /* Float left to align with other content */
+        }
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+        }
+        .current-project {
+            float: left; /* Float left to align with other content */
+            margin-left: 20px; /* Add some spacing */
+        }
+		.currently-exploring {
+            float: right; /* Float right to align with other content */
+            margin-right: 20px; /* Add some spacing */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Portfolio
+		    <div class="profile-picture">
+        <img src="/Website Portfolio/Resources/Portfolio Picture.jpg" alt="Profile Picture">
+    </div>
+		</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="https://github.com/verdentta">Projects</a> |
+        <a href="/Website Portfolio//Resources/Resume_Romeo_Paul.pdf">Résumé</a>
+		<a href="https://www.linkedin.com/in/romeo-paul-645152166/">Linkedin.</a>
+    </nav>
+
+    <div class="current-project">
+        <section>
+            <h3>Current Project</h3>
+            <p>This is where you can describe your current project.</p>
+        </section>
+    </div>
+	<div class="currently-exploring">
+        <section>
+            <h3>Currently Exploring</h3>
+            <p>This is where you can describe your current project.</p>
+        </section>
+    </div>
+    <article>
+        <h2>Greetings!</h2>
+        <p>My name is Romeo Paul. I'm a Computer Science student at Ryerson University. This website serves as an introduction to who I am and what I do.</p>
+    </article>
+    <!-- Other sections go here -->
+    <section>
+        <h3>About Me</h3>
+        <p>I was born in India and moved to Canada at the age of 5. Currently, I'm 22 years old and reside in Mississauga. I'm passionate about programming and technology. I love to get my hands dirty with new and interesting coding projects and new technologies that may exist or are in development!</p>
+    </section>
+    <section>
+        <h3>My Interests</h3>
+        <ul>
+            <li>TV Shows:
+                <ul>
+                    <li>Mr. Robot</li>
+                    <li>The Big Bang Theory</li>
+                    <li>The Office</li>
+                </ul>
+            </li>
+            <li>Sports:
+                <ul>
+                    <li>Cross Country Running</li>
+                    <li>Track and Field (400m Dash)</li>
+                    <li>Badminton</li>
+                </ul>
+            </li>
+            <li>Programming Languages:
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>Bash</li>
+                    <li>SQL/MySQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>C</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Other Hobbies</h3>
+        <p>In addition to my academic pursuits, I enjoy playing video games, watching movies, going for walks, and learning new things.</p>
+    </section>
+	
+	 <script>
+        // Fetch data from GitHub API
+        fetch('https://api.github.com/repos/verdentta/Picdle')
+            .then(response => response.json())
+            .then(data => {
+                // Create HTML elements to display the project information
+                const section = document.getElementById('currentProject');
+                const projectTitle = document.createElement('h3');
+                projectTitle.textContent = data.name;
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = data.description;
+
+                // Append the project information to the section
+                section.appendChild(projectTitle);
+                section.appendChild(projectDescription);
+            })
+            .catch(error => console.error('Error fetching data from GitHub:', error));
+    </script>
+    <footer>
+        <p>Author: Romeo Paul</p>
+        <p>If you wish to contact me, feel free to send me an email at <a href="mailto:romeo.paul@ryerson.ca">romeo.paul@ryerson.ca</a>.</p>
+    </footer>
+</body>
+</html>
