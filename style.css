@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #081B29;
-    background-image: url("/Website Portfolio/Resources/image.jpg");
+    background-image: url("image.jpg");
     background-position: center center;  /* Image centered horizontally and vertically */
     background-repeat: no-repeat;  /* Image displayed only once */
     background-size: cover;  /* Image scaled to cover the entire body */
