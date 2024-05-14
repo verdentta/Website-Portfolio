@@ -2,11 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #20242d;
+    background-color: #081B29;
+    background-image: url("/Website Portfolio/Resources/image.jpg");
+    background-position: center center;  /* Image centered horizontally and vertically */
+    background-repeat: no-repeat;  /* Image displayed only once */
+    background-size: cover;  /* Image scaled to cover the entire body */
 }
 
 header h1 {
-    color: #fcfcfc;
+   
     text-align: center;
     margin-bottom: 20px;
     animation: slideRight 1s ease forwards;
@@ -21,11 +25,12 @@ header h1 {
     display: block;
     overflow: hidden;
     float: center; /* Float left to align with other content */
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite, glowPulse 3.8s ease-in-out infinite;
     animation-delay: 0s, 1s;
-    filter: drop-shadow(0 0 10px rgba(48, 248, 29, 1)); /* Adjust glow color and intensity */
+    
    
 }
+
 
 /* orients the picture to center the face */
 .profile-picture img {
@@ -48,25 +53,31 @@ ul {
     margin: 0;
     padding: 4;
     overflow: hidden;
-    background-color: #20242d;
+    
 }
 
 li {
     float: right;
     margin-right: 60px; /* Adjust the margin-right to increase spacing between items */
     font-family: "Roboto", sans-serif; /* Specify the font family */
-    font-size: 20px; /* Adjust the font size */
+    font-size: 16px; /* Adjust the font size */
+    font-family: "Roboto", sans-serif; /* Specify the font family */
+    margin-bottom: 15px;
 }
 
 li a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 20px 60px;
     text-decoration: none;
     font-family: "Roboto", sans-serif; /* Specify the font family */
-    animation: slideTop .5s ease forwards;
     font-size: 20px; /* Adjust the font size */
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    
 }
 
 li a:hover:not(.active) {
@@ -92,6 +103,13 @@ h3 {
     
     
 }
+h4 {
+    color: white;
+    font-size: 20px;
+    animation: slideRight 1s ease forwards;
+}
+
+
 
 h1 {
     color: white;
@@ -106,6 +124,16 @@ h1 {
 
 #job-title {
     animation: slideTop .5s ease forwards;
+  }
+
+  #list {
+    float: left;
+    font-size: 10px;
+    color: rgb(241, 242, 241);
+    font-family: "Roboto", sans-serif; /* Specify the font family */
+    display: flex;
+    flex-direction: column;
+ 
   }
 
   /* Put all the animation keyframes below here! */
@@ -172,6 +200,18 @@ h1 {
         opacity: 1;
     }
     
+}
+
+@keyframes glowPulse {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(48, 248, 29, 0.1)); /* Initial glow */
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(48, 248, 29, 0.9)); /* Max glow */
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(48, 248, 29, 0.1)); /* Back to initial glow */
+    }
 }
 
  /* Put all the animation keyframes above here! */
