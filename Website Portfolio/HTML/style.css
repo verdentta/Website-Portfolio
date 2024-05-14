@@ -11,32 +11,8 @@ header h1 {
     margin-bottom: 20px;
     animation: slideRight 1s ease forwards;
 }
-nav {
-    text-align: center; /* Center-align the navigation bar */
-    width: 100%; /* Set the width to 100% */
-    margin: 0; /* Remove default margin */
-    padding: 20px 0; /* Add padding to the top and bottom */
-    background-color: #1033FF; /* Set the background color */
-    font-family: "Roboto", sans-serif; /* Specify the font family */
-}
 
-nav a {
-    text-decoration: none;
-    color: #3498db;
-    margin: 0 20px; /* Adjust the spacing between navigation links */
-    padding: 10px 15px; /* Add padding to create space around the text */
-    border-radius: 5px; /* Add rounded corners */
-    background-color: #f2f2f2; /* Add a background color */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
-    font-size: 20px; /* Adjust the font size */
-    font-weight: bold; /* Make the font bold */
-    letter-spacing: 1px; /* Adjust the letter spacing */
-}
-
-nav a:hover {
-    background-color: #30f81d; /* Change background color on hover */
-}
-
+/* defines the dimensions of the picture */
 .profile-picture {
     width: 600px;
     height: 400px;
@@ -45,47 +21,17 @@ nav a:hover {
     display: block;
     overflow: hidden;
     float: center; /* Float left to align with other content */
-    animation: zoomIn 1s ease forwards;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 0s, 1s;
+    filter: drop-shadow(0 0 10px rgba(48, 248, 29, 1)); /* Adjust glow color and intensity */
    
 }
+
+/* orients the picture to center the face */
 .profile-picture img {
     width: 100%;
     height: auto;
     
-}
-
-header {
-    background-color: #20242d; /* Change the background color of the header */
-    margin: 0; /* Remove margin */
-    padding: 20px 0; /* Adjust padding */
-    text-align: center; /* Center the text */
-}
-
-
-.profile-picture {
-    margin: 0 auto 20px; /* Center the profile picture */
-}
-
-@keyframes slideRight {
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateX(0);
-        opacity: 1;
-    }
-    
-}
-
-.nav-title {
-    display: inline-block; /* Ensure the title behaves like a block element */
-    margin-right: 20px; /* Add margin to create space between the title and the navigation links */
-    color: #fff; /* Set the text color */
-    font-weight: bold; /* Make the text bold */
-    font-size: 20px; /* Adjust the font size */
-    line-height: 50px; /* Center the title vertically within the navbar */
 }
 
 p {
@@ -95,9 +41,8 @@ p {
     padding: 8px 2px;
     color: white;
     font-family: "Roboto", sans-serif; /* Specify the font family */
-    
-
   }
+
 ul {
     list-style-type:none;
     margin: 0;
@@ -105,12 +50,14 @@ ul {
     overflow: hidden;
     background-color: #20242d;
 }
+
 li {
     float: right;
     margin-right: 60px; /* Adjust the margin-right to increase spacing between items */
     font-family: "Roboto", sans-serif; /* Specify the font family */
     font-size: 20px; /* Adjust the font size */
 }
+
 li a {
     display: block;
     color: white;
@@ -121,6 +68,7 @@ li a {
     animation: slideTop .5s ease forwards;
     font-size: 20px; /* Adjust the font size */
 }
+
 li a:hover:not(.active) {
     background-color: #30f81d;
 }
@@ -134,6 +82,7 @@ li a:hover:not(.active) {
     align-items: center;
     padding: 70px 10% 0;
 }
+
 h3 {
     color: white;
     font-size: 35px;
@@ -155,6 +104,49 @@ h1 {
     color: #30f81d;
 }
 
+#job-title {
+    animation: slideTop .5s ease forwards;
+  }
+
+  /* Put all the animation keyframes below here! */
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes zoomIn
+{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    %100{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 @keyframes slideTop {
     0%{
@@ -182,19 +174,5 @@ h1 {
     
 }
 
-.up {
-    animation: slideTop .5s ease forwards;
-}
-
-@keyframes zoomIn
-{
-    0%{
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    %100{
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+ /* Put all the animation keyframes above here! */
+ 
